@@ -6,8 +6,6 @@
  * @package Resize_Animated_GIF
  */
 
-require_once dirname( __DIR__ ) . '/vendor/autoload.php';
-
 /**
  * Resize animated GIF Editor.
  *
