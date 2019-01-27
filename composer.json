@@ -1,21 +1,35 @@
 {
-	"name": "cyrale/resize-animated-gif",
-	"description": "Resize animated GIF",
-	"keywords": ["wordpress", "plugin", "generator-plugin-wp", "image", "resize", "gif"],
-	"homepage": "https://github.com/cyrale/resize-animated-gif",
-	"license": "GPLv2",
-	"authors": [
-	{
-		"name": "Cyrale",
-		"homepage": "https://github.com/cyrale"
-	}
-	],
-	"minimum-stability": "dev",
-	"type": "wordpress-plugin",
-	"autoload": {
-		"classmap": ["resize-animated-gif.php", "includes/"]
-	},
-	"require": {
-		"rundiz/image": "dev-master"
-	}
+  "name": "cyrale/resize-animated-gif",
+  "version": "1.0.0",
+  "description": "Resize animated GIF",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "generator-plugin-wp",
+    "image",
+    "resize",
+    "gif"
+  ],
+  "homepage": "https://github.com/cyrale/resize-animated-gif",
+  "license": "GPLv2",
+  "authors": [
+    {
+      "name": "Cyrale",
+      "homepage": "https://github.com/cyrale"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/cyrale/resize-animated-gif/issues",
+    "source": "https://github.com/cyrale/resize-animated-gif"
+  },
+  "type": "wordpress-plugin",
+  "autoload": {
+    "classmap": [
+      "resize-animated-gif.php",
+      "includes/"
+    ]
+  },
+  "require": {
+    "rundiz/image": "dev-master"
+  }
 }
