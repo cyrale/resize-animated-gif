@@ -29,6 +29,7 @@
       "includes/"
     ]
   },
+  "minimum-stability": "dev",
   "require": {
     "rundiz/image": "dev-master"
   }
