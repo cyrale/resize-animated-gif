@@ -1,0 +1,20 @@
+{
+  "generator-plugin-wp": {
+    "name": "Resize animated GIF",
+    "homepage": "https://github.com/cyrale/resize-animated-gif",
+    "description": "Resize animated GIF",
+    "version": "1.0.0",
+    "author": "Cyrale",
+    "authoremail": "cyril@jacquesson.me",
+    "authorurl": "https://github.com/cyrale",
+    "license": "GPLv2",
+    "slug": "resize-animated-gif",
+    "classname": "Resize_Animated_GIF",
+    "mainclassname": "Resize_Animated_GIF",
+    "classprefix": "RAGIF_",
+    "prefix": "resize_animated_gif",
+    "year": 2019,
+    "currentVersionWP": "4.8.1",
+    "plugingenversion": "0.20.2"
+  }
+}

@@ -1,0 +1,69 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5bb069700e4bc3756b476a3fffe384d6",
+    "packages": [
+        {
+            "name": "rundiz/image",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Rundiz/image.git",
+                "reference": "7a9460ede33f2c6c112dcfac3cb38c0e027dc94a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Rundiz/image/zipball/7a9460ede33f2c6c112dcfac3cb38c0e027dc94a",
+                "reference": "7a9460ede33f2c6c112dcfac3cb38c0e027dc94a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rundiz\\Image\\": "Rundiz/Image"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vee W.",
+                    "email": "kawewong@gmail.com",
+                    "homepage": "http://rundiz.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Image manipulation use GD or Imagick as drivers. It support watermark image or text, resize, crop, rotate, transparency gif or png and also support animation gif (Imagick only).",
+            "keywords": [
+                "animated gif",
+                "animation",
+                "crop image",
+                "image",
+                "resize image",
+                "rotate image",
+                "thumbnail",
+                "transparency image",
+                "watermark"
+            ],
+            "time": "2019-01-10T16:52:53+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "rundiz/image": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
