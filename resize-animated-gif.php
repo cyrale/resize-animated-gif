@@ -167,7 +167,7 @@ final class Resize_Animated_GIF {
 		}
 
 		// Make sure any rewrite functionality has been loaded.
-		flush_rewrite_rules();
+		// flush_rewrite_rules();
 	}
 
 	/**
@@ -200,11 +200,16 @@ final class Resize_Animated_GIF {
 	}
 
 	public function image_editors( $editors ) {
-		if ( ! class_exists( 'RAGIF_Editor' ) ) {
-			require_once __DIR__ . '/includes/class-editor.php';
+		if ( ! class_exists( 'Animated_GIF_Editor_GD' ) ) {
+			require_once __DIR__ . '/includes/class-animated-gif-editor-gd.php';
 		}
 
-		array_unshift( $editors, 'RAGIF_Editor' );
+		if ( ! class_exists( 'Animated_GIF_Editor_Imagick' ) ) {
+			require_once __DIR__ . '/includes/class-animated-gif-editor-imagick.php';
+		}
+
+		array_unshift( $editors, 'Animated_GIF_Editor_GD' );
+//		array_unshift( $editors, 'Animated_GIF_Editor_Imagick' );
 
 		return $editors;
 	}

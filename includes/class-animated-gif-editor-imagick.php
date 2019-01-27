@@ -11,7 +11,7 @@
  *
  * @since 1.0.0
  */
-class RAGIF_Editor extends WP_Image_Editor {
+class Animated_GIF_Editor_Imagick extends WP_Image_Editor {
 	/**
 	 * Animated GIF Resource.
 	 *

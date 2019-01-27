@@ -31,6 +31,8 @@
   },
   "minimum-stability": "dev",
   "require": {
-    "rundiz/image": "dev-master"
+    "rundiz/image": "dev-master",
+    "sybio/gif-frame-extractor": "dev-master",
+    "sybio/gif-creator": "dev-master"
   }
 }
