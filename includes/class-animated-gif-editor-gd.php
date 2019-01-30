@@ -325,60 +325,60 @@ class Animated_GIF_Editor_GD extends WP_Image_Editor_GD {
 	 * @param float $angle
 	 * @return true|WP_Error
 	 */
-	public function rotate( $angle ) {
-		if ( ! \GifFrameExtractor\GifFrameExtractor::isAnimatedGif( $this->file ) ) {
-			parent::rotate( $angle );
-		}
-
-		$rotated = $this->_rotate_animated_gif( $angle );
-
-		if ( is_wp_error( $rotated ) ) {
-			return $rotated;
-		}
-
-		$this->image_animated_gif = $rotated;
-
-		return true;
-	}
-
-	protected function _rotate_animated_gif( $angle ) {
-		if ( ! function_exists('imagerotate') ) {
-			return new WP_Error( 'image_rotate_error', __( 'Image rotate failed.' ), $this->file );
-		}
-
-		$frame_resources = [];
-		$durations       = [];
-
-		$gfe = new \GifFrameExtractor\GifFrameExtractor();
-
-		foreach ( $gfe->extract( $this->file ) as $frame ) {
-			$transparency = imagecolorallocatealpha( $frame['image'], 255, 255, 255, 127 );
-			$rotated      = imagerotate( $frame['image'], $angle, $transparency );
-
-			if ( is_resource( $rotated ) ) {
-				imagealphablending( $rotated, true );
-				imagesavealpha( $rotated, true );
-
-				$frame_resources[] = $rotated;
-				$durations[]       = $frame['duration'];
-			}
-		}
-
-		if ( empty( $frame_resources ) ) {
-			return new WP_Error( 'image_rotate_error', __( 'Image rotate failed.' ), $this->file );
-		}
-
-		$this->update_size();
-
-		try {
-			$gc = new \GifCreator\GifCreator();
-			$gc->create( $frame_resources, $durations, 0 );
-
-			return $gc;
-		} catch ( Exception $e ) {
-			return new WP_Error( 'error_gif_creation', $e->getMessage(), $this->file );
-		}
-	}
+//	public function rotate( $angle ) {
+//		if ( ! \GifFrameExtractor\GifFrameExtractor::isAnimatedGif( $this->file ) ) {
+//			parent::rotate( $angle );
+//		}
+//
+//		$rotated = $this->_rotate_animated_gif( $angle );
+//
+//		if ( is_wp_error( $rotated ) ) {
+//			return $rotated;
+//		}
+//
+//		$this->image_animated_gif = $rotated;
+//
+//		return true;
+//	}
+//
+//	protected function _rotate_animated_gif( $angle ) {
+//		if ( ! function_exists('imagerotate') ) {
+//			return new WP_Error( 'image_rotate_error', __( 'Image rotate failed.' ), $this->file );
+//		}
+//
+//		$frame_resources = [];
+//		$durations       = [];
+//
+//		$gfe = new \GifFrameExtractor\GifFrameExtractor();
+//
+//		foreach ( $gfe->extract( $this->file ) as $frame ) {
+//			$transparency = imagecolorallocatealpha( $frame['image'], 255, 255, 255, 127 );
+//			$rotated      = imagerotate( $frame['image'], $angle, $transparency );
+//
+//			if ( is_resource( $rotated ) ) {
+//				imagealphablending( $rotated, true );
+//				imagesavealpha( $rotated, true );
+//
+//				$frame_resources[] = $rotated;
+//				$durations[]       = $frame['duration'];
+//			}
+//		}
+//
+//		if ( empty( $frame_resources ) ) {
+//			return new WP_Error( 'image_rotate_error', __( 'Image rotate failed.' ), $this->file );
+//		}
+//
+//		$this->update_size();
+//
+//		try {
+//			$gc = new \GifCreator\GifCreator();
+//			$gc->create( $frame_resources, $durations, 0 );
+//
+//			return $gc;
+//		} catch ( Exception $e ) {
+//			return new WP_Error( 'error_gif_creation', $e->getMessage(), $this->file );
+//		}
+//	}
 
 	/**
 	 * Flips current image.
@@ -388,60 +388,60 @@ class Animated_GIF_Editor_GD extends WP_Image_Editor_GD {
 	 *
 	 * @return true|WP_Error
 	 */
-	public function flip( $horz, $vert ) {
-		if ( ! \GifFrameExtractor\GifFrameExtractor::isAnimatedGif( $this->file ) ) {
-			parent::flip( $horz, $vert );
-		}
-
-		$flipped = $this->_flip_animated_gif( $horz, $vert );
-
-		if ( is_wp_error( $flipped ) ) {
-			return $flipped;
-		}
-
-		$this->image_animated_gif = $flipped;
-
-		return true;
-	}
-
-	protected function _flip_animated_gif( $horz, $vert ) {
-		$w = $this->size['width'];
-		$h = $this->size['height'];
-
-		$frame_resources = [];
-		$durations       = [];
-
-		$gfe = new \GifFrameExtractor\GifFrameExtractor();
-
-		foreach ( $gfe->extract( $this->file ) as $frame ) {
-			$flipped = wp_imagecreatetruecolor( $w, $h );
-
-			if ( is_resource( $flipped ) ) {
-				$sx = $vert ? ( $w - 1 ) : 0;
-				$sy = $horz ? ( $h - 1 ) : 0;
-				$sw = $vert ? - $w : $w;
-				$sh = $horz ? - $h : $h;
-
-				if ( imagecopyresampled( $flipped, $this->image, 0, 0, $sx, $sy, $w, $h, $sw, $sh ) ) {
-					$frame_resources[] = $flipped;
-					$durations[]       = $frame['duration'];
-				}
-			}
-		}
-
-		if ( empty( $frame_resources ) ) {
-			return new WP_Error( 'image_flip_error', __('Image flip failed.'), $this->file );
-		}
-
-		try {
-			$gc = new \GifCreator\GifCreator();
-			$gc->create( $frame_resources, $durations, 0 );
-
-			return $gc;
-		} catch ( Exception $e ) {
-			return new WP_Error( 'error_gif_creation', $e->getMessage(), $this->file );
-		}
-	}
+//	public function flip( $horz, $vert ) {
+//		if ( ! \GifFrameExtractor\GifFrameExtractor::isAnimatedGif( $this->file ) ) {
+//			parent::flip( $horz, $vert );
+//		}
+//
+//		$flipped = $this->_flip_animated_gif( $horz, $vert );
+//
+//		if ( is_wp_error( $flipped ) ) {
+//			return $flipped;
+//		}
+//
+//		$this->image_animated_gif = $flipped;
+//
+//		return true;
+//	}
+//
+//	protected function _flip_animated_gif( $horz, $vert ) {
+//		$w = $this->size['width'];
+//		$h = $this->size['height'];
+//
+//		$frame_resources = [];
+//		$durations       = [];
+//
+//		$gfe = new \GifFrameExtractor\GifFrameExtractor();
+//
+//		foreach ( $gfe->extract( $this->file ) as $frame ) {
+//			$flipped = wp_imagecreatetruecolor( $w, $h );
+//
+//			if ( is_resource( $flipped ) ) {
+//				$sx = $vert ? ( $w - 1 ) : 0;
+//				$sy = $horz ? ( $h - 1 ) : 0;
+//				$sw = $vert ? - $w : $w;
+//				$sh = $horz ? - $h : $h;
+//
+//				if ( imagecopyresampled( $flipped, $this->image, 0, 0, $sx, $sy, $w, $h, $sw, $sh ) ) {
+//					$frame_resources[] = $flipped;
+//					$durations[]       = $frame['duration'];
+//				}
+//			}
+//		}
+//
+//		if ( empty( $frame_resources ) ) {
+//			return new WP_Error( 'image_flip_error', __('Image flip failed.'), $this->file );
+//		}
+//
+//		try {
+//			$gc = new \GifCreator\GifCreator();
+//			$gc->create( $frame_resources, $durations, 0 );
+//
+//			return $gc;
+//		} catch ( Exception $e ) {
+//			return new WP_Error( 'error_gif_creation', $e->getMessage(), $this->file );
+//		}
+//	}
 
 	/**
 	 * Saves current in-memory image to file.
