@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc0d9c3d065140fa752a8061e15e68e8",
+    "content-hash": "1eb60a52c1291531abad5ac31b408180",
     "packages": [
         {
             "name": "rundiz/image",

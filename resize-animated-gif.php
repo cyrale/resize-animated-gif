@@ -3,7 +3,7 @@
  * Plugin Name: Resize animated GIF
  * Plugin URI:  https://github.com/cyrale/resize-animated-gif
  * Description: Resize animated GIF
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      Cyrale
  * Author URI:  https://github.com/cyrale
  * Donate link: https://github.com/cyrale/resize-animated-gif
@@ -14,7 +14,7 @@
  * @link    https://github.com/cyrale/resize-animated-gif
  *
  * @package Resize_Animated_GIF
- * @version 1.0.0
+ * @version 1.1.0
  *
  * Built using generator-plugin-wp (https://github.com/WebDevStudios/generator-plugin-wp)
  */
@@ -56,7 +56,7 @@ final class Resize_Animated_GIF {
 	 * @var    string
 	 * @since  1.0.0
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.1.0';
 
 	/**
 	 * URL of plugin directory.
